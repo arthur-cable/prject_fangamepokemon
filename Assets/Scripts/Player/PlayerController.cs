@@ -5,13 +5,20 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     //Player speed
-
     public float moveSpeed;
 
     //Player check 
     private bool isMoving;
 
     private Vector2 input;
+
+    private Animator animator;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
 
     private void Update()
     {
@@ -20,11 +27,15 @@ public class PlayerController : MonoBehaviour
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
 
+
             //remove diagonal mouvement
             if (input.x != 0) input.y = 0;
 
             if (input != Vector2.zero)
             {
+                animator.SetFloat("moveX", input.x);
+                animator.SetFloat("moveY", input.y);
+
                 var targetPos = transform.position;
                 targetPos.x += input.x;
                 targetPos.y += input.y;
@@ -32,6 +43,8 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(Move(targetPos));
             }
         }
+
+        animator.SetBool("isMoving", isMoving);
     }
     //la coroutine
     IEnumerator Move(Vector3 targetPos)
