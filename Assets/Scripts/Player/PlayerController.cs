@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     //Player speed
     public float moveSpeed;
 
+    public LayerMask solidObjectsLayer;
+
     //Player check 
     private bool isMoving;
 
@@ -40,6 +42,8 @@ public class PlayerController : MonoBehaviour
                 targetPos.x += input.x;
                 targetPos.y += input.y;
 
+
+                if (IsWalkable(targetPos))
                 StartCoroutine(Move(targetPos));
             }
         }
@@ -60,4 +64,15 @@ public class PlayerController : MonoBehaviour
 
         isMoving = false;
     }
+
+    private bool IsWalkable(Vector3 targetPos)
+    {
+       if (Physics2D.OverlapCircle(targetPos, 0.2f, solidObjectsLayer) != null)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
 }
