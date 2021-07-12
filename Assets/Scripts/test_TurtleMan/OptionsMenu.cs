@@ -36,7 +36,7 @@ public class OptionsMenu : MonoBehaviour
 
 
         //Gestion du toggleFullscreen_____________________________________________________________________________________________________________________
-        FullscreenToggle.isOn = Screen.fullScreen; 
+        FullscreenToggle.isOn = Screen.fullScreen; //Si le jeu est en plein écran alors on coche automatiquement Toggle_fullscreen sur Unity
     }
 
     public void setResolution(int resolutionIndex)
