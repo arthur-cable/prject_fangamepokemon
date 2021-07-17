@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
 
     public LayerMask solidObjectsLayer;
+    public LayerMask grassLayer;
 
     //Player check 
     private bool isMoving;
@@ -63,6 +64,9 @@ public class PlayerController : MonoBehaviour
         transform.position = targetPos;
 
         isMoving = false;
+
+        //variable pour la rencontre dans les herbes
+        CheckForEncounters();
     }
 
     private bool IsWalkable(Vector3 targetPos)
@@ -74,5 +78,19 @@ public class PlayerController : MonoBehaviour
 
         return true;
     }
+    // pour le check des longues herbes
+    private void CheckForEncounters()
+    {
+        //check si le player marchant dans les herbes rencontre un pokémon
+        if (Physics2D.OverlapCircle(transform.position, 0.2f, grassLayer) != null)
+        {
+          if  (Random.Range(1, 101) <= 10)
+            {
+                // retour console comme quoi on rencontre bien le pokémon
+                Debug.Log("Encountered a wild pokemon");
+            }
+        }
+    }
+
 
 }
