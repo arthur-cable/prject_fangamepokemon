@@ -321,6 +321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1344076752}
   dialogueText: {fileID: 1301134524}
+  animator: {fileID: 1858166949}
 --- !u!4 &877631470
 Transform:
   m_ObjectHideFlags: 0
@@ -350,13 +351,22 @@ MonoBehaviour:
   nameText: {fileID: 1344076752}
   dialogueText: {fileID: 1301134524}
   dialogue:
-    name: Pr X
+    name: Pr X (alias clone de Pr Chen)
     sentences:
-    - Bonjour JACKSON !!!
-    - "Comme tu peux le voir j'ai cr\xE9\xE9 une bo\xEEte de dialogue. "
-    - "C'est pas termin\xE9 pour le moment, je dois faire en sorte que la boite de
-      dialogue apparaisse et disparaisse. De m\xEAme pour le texte, l'objectif est
-      de le faire appara\xEEtre progressivement.  "
+    - "Bonjour Dresseur ! Bonjour JACKSON ! \nPour passer \xE0 la prochaine ligne
+      de dialogue, tu peux appuyer sur la barre espace ou sur le bouton continuer
+      en bas \xE0 droite de la boite de dialogue."
+    - 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquet mi
+      vitae nunc tempor accumsan. Phasellus tincidunt auctor bibendum. Cras porttitor
+      at massa vel scelerisque. In porttitor, sapien sed luctus rhoncus, sapien tellus
+      auctor est, quis facilisis lacus diam sit amet ante. Vivamus pulvinar nunc
+      libero, sed tristique ex pharetra ut. Nullam fringilla neque in lectus pretium,
+      vel mollis elit faucibus. '
+    - "Comme tu peux le voir j'ai r\xE9ussi \xE0 cr\xE9er une bo\xEEte de dialogue
+      avec animation du texte et de la boite de dialogue. Je t'envoie vers la scene_test
+      parce que c'est chiant de changer de scene via unity pour tout tester ;) \nAlors
+      va dresseur, une nouvelle r\xE9gion t'attend !!! "
+  animator: {fileID: 1858166949}
 --- !u!1 &1020744130
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,8 +889,9 @@ GameObject:
   - component: {fileID: 1858166946}
   - component: {fileID: 1858166948}
   - component: {fileID: 1858166947}
+  - component: {fileID: 1858166949}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: pan_DialogueBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -946,3 +957,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858166945}
   m_CullTransparentMesh: 1
+--- !u!95 &1858166949
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858166945}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 61d5f03d668b1e441bcd915ce2a63adb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

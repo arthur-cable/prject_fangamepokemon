@@ -6,42 +6,71 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public Text nameText;
-    public Text dialogueText;
-    private Queue<string> sentences;
-    
+    public Text nameText; //Text sur Unity où s'affichera le nom du personnage qui parle
+    public Text dialogueText; //Text sur Unity où s'affichera le dialogue
+    public Animator animator;  //Gère l'animation de la boite de dialogue quand elle apparait et disparait
+    private Queue<string> sentences; //donnée intermédaire qui stockera l'ensemble des phrases du dialogue
+
 
     private void Start()
     {
        sentences = new Queue<string>();  //initialisation de la queue
     }
 
-
+    //permet de commencer
     public void CommencerConversation(Dialogue dialogue)
     {
-        nameText.text = dialogue.name;
+        animator.SetBool("isOpen", true); //Déclenche l'ouverture de la boite de dialogue
+        nameText.text = dialogue.name; //Permet l'affichage sur le jeu du nom de la personne qui parle
+
+        //initialisation de la queue
         sentences.Clear();
         foreach (string sentence in dialogue.sentences)
         {
-            sentences.Enqueue(sentence); 
+            sentences.Enqueue(sentence); //Permet de stocker toutes les phrases de dialogue dans la queue
         }
-        ContinuerConversation(); 
+        ContinuerConversation(); //Engage le début de la conversation
     }
 
-
+    //Méthode gèrant l'affichage du dialogue
     public void ContinuerConversation()
     {
-        if (sentences.Count == 0)
+        if (sentences.Count == 0) //Quand la queue ne contient plus d'élément
         {
             FinConversation();
-            return; 
+            return; //Permet de sortir de la fonction
         }
-        dialogueText.text = sentences.Dequeue();
+        string sentence = sentences.Dequeue(); //on stocke la phrase la plus haut de la pile dans la variable sentence
+        StopAllCoroutines(); //On arrête toutes les autres coroutines du script (donc si le joueur veut passer à la prochaine phrase il pourra même si tout le texte n'est pas encore affiché)
+        StartCoroutine(WriteSentence(sentence)); //lance la coroutine qui permet l'affichage progressif de sentence
     }
 
 
-    private void FinConversation()
+    //Fonction qui permettra d'afficher progressivement le texte de sentence
+    IEnumerator WriteSentence(string sentence)
     {
-        Debug.Log("Fin de la conversation"); 
+        dialogueText.text = ""; //on vide la zone permettant l'affichage du dialogue sur unity 
+        foreach (char letter in sentence.ToCharArray()) //On prend chaque caractere un par un de sentence
+        {
+            dialogueText.text += letter; //on ajoute au contenu déjà affiché la lettre suivante
+            yield return null; //permet de skipper une frame
+
+            /*Si on veut skipper plus de frame : 
+            yield return new WaitForSeconds(0.01f); */
+        }
+    }
+
+    //Fonction qui gère la fin d'une conversation 
+    void FinConversation()
+    {
+        animator.SetBool("isOpen", false); //Déclenche la fermeture de la boite de dialogue
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space)) //Si on appuie sur la barre espace, permet de passer au dialogue suivante (il faudra peut être une condition plus restrictive quand on voudra parler au PNJ)
+        {
+            ContinuerConversation();
+        }
     }
 }
