@@ -12,13 +12,18 @@ public class DialogueLancementScene : MonoBehaviour
     public Text dialogueText; //Text sur Unity où s'affichera le dialogue
     public Dialogue dialogue;   //class qui contient le dialogue (les phrases du dialogue et également le nom du perso qui parle)
     public Animator animator; //Gère l'animation de la boite de dialogue quand elle apparait et disparait
+
     private Queue<string> sentences; //donnée intermédaire qui stockera l'ensemble des phrases du dialogue
+    private bool isTalking; //Pour savoir si la conversation est en cours
 
     //Puisqu'on lance la conversation dès le lancement de la scene, on utilise la méthode Start pour commencer le dialogue
     private void Start()
     {
-        //Déclenche l'ouverture de la boite de dialogue
-        animator.SetBool("isOpen", true);
+        PlayerPrefs.DeleteKey("PlayerName");//*******************************************************LIGNE DE TEST : A ENLEVER ABSOLUMENT APRES TEST *****************************
+
+        //Déclenche l'ouverture de la boite de dialogue et indique que la conversation est en cours.
+        animator.SetBool("DialogueBoxIsOpen", true);
+        isTalking = true; 
 
         //initialisation de la queue
         sentences = new Queue<string>();
@@ -61,16 +66,22 @@ public class DialogueLancementScene : MonoBehaviour
     //Fonction qui gère la fin d'une conversation 
     private void FinConversation()
     {
-        animator.SetBool("isOpen", false); //Déclenche la fermeture de la boite de dialogue
-        if (SceneManager.GetActiveScene().name == "turtle_jeu") //Dans le cas où la scene active est turtle_jeu
-        {
-            SceneManager.LoadScene("scene_test", LoadSceneMode.Single); //Charge la scene scene_test
+        isTalking = false; 
+        string cas = SceneManager.GetActiveScene().name; 
+        switch(cas){ //Selon la scene active le comportement pour la fin de la conversation pourra varier.
+            case "turtle_jeu": //Dans le cas où la scene active est turtle_jeu
+                animator.SetBool("ChoixSexeIsOpen", true);
+                break;
+           
+            default: //Cas par defaut => ferme la boite de dialogue
+                animator.SetBool("isOpen", false); //Déclenche la fermeture de la boite de dialogue
+                break;
         }
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))  //Si on appuie sur la barre espace
+        if (Input.GetKeyDown(KeyCode.Space) && isTalking == true)  //Si on appuie sur la barre espace
         {
             ContinuerConversation(); 
         }

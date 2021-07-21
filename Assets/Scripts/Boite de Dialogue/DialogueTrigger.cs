@@ -9,7 +9,6 @@ public class DialogueTrigger : MonoBehaviour
     public void triggerDialogue()
     {
         FindObjectOfType<DialogueManager>().CommencerConversation(dialogue); 
-
     }
 
 }

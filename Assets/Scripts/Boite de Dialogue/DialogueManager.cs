@@ -2,7 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; 
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText; //Text sur Unity où s'affichera le dialogue
     public Animator animator;  //Gère l'animation de la boite de dialogue quand elle apparait et disparait
     private Queue<string> sentences; //donnée intermédaire qui stockera l'ensemble des phrases du dialogue
+    private bool isTalking; //Pour savoir si la conversation est en cours
 
 
     private void Start()
@@ -17,11 +19,12 @@ public class DialogueManager : MonoBehaviour
        sentences = new Queue<string>();  //initialisation de la queue
     }
 
-    //permet de commencer
+    //permet de commencer la conversation
     public void CommencerConversation(Dialogue dialogue)
     {
-        animator.SetBool("isOpen", true); //Déclenche l'ouverture de la boite de dialogue
+        animator.SetBool("DialogueBoxIsOpen", true); //Déclenche l'ouverture de la boite de dialogue
         nameText.text = dialogue.name; //Permet l'affichage sur le jeu du nom de la personne qui parle
+        isTalking = true;
 
         //initialisation de la queue
         sentences.Clear();
@@ -47,7 +50,7 @@ public class DialogueManager : MonoBehaviour
 
 
     //Fonction qui permettra d'afficher progressivement le texte de sentence
-    IEnumerator WriteSentence(string sentence)
+    private IEnumerator WriteSentence(string sentence)
     {
         dialogueText.text = ""; //on vide la zone permettant l'affichage du dialogue sur unity 
         foreach (char letter in sentence.ToCharArray()) //On prend chaque caractere un par un de sentence
@@ -63,12 +66,42 @@ public class DialogueManager : MonoBehaviour
     //Fonction qui gère la fin d'une conversation 
     void FinConversation()
     {
-        animator.SetBool("isOpen", false); //Déclenche la fermeture de la boite de dialogue
+        isTalking = false;
+        string cas = SceneManager.GetActiveScene().name;
+        switch (cas)
+        {
+            case "turtle_jeu":
+                if (PlayerPrefs.HasKey("PlayerName") == false)
+                {
+                    animator.SetBool("PlayerNameIsOpen", true);
+                }
+                else
+                {
+                    animator.SetBool("DialogueBoxIsOpen", false);
+                    StartCoroutine(FermetureAvantChangementScene());   
+                }
+                break;
+
+
+            default:
+                animator.SetBool("DialogueBoxIsOpen", false);
+                break;
+        }
     }
+
+
+    private IEnumerator FermetureAvantChangementScene()
+    {
+        yield return new WaitForSeconds(0.25f);
+        SceneManager.LoadScene("scene_test", LoadSceneMode.Single); //Charge la scene scene_test
+
+    }
+
+
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) //Si on appuie sur la barre espace, permet de passer au dialogue suivante (il faudra peut être une condition plus restrictive quand on voudra parler au PNJ)
+        if (Input.GetKeyDown(KeyCode.Space) && isTalking==true) //Si on appuie sur la barre espace, permet de passer au dialogue suivante (il faudra peut être une condition plus restrictive quand on voudra parler au PNJ)
         {
             ContinuerConversation();
         }
