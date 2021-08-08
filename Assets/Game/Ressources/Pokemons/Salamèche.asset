@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2930ca53a932a9a4a8781c60a1a59f4d, type: 3}
   m_Name: "Salam\xE8che"
   m_EditorClassIdentifier: 
-  name: 
-  description: 
+  name: "Salam\xE8che"
+  description: salammmandre
   frontsprite: {fileID: 21300000, guid: 8f3a3be91ad3efe4c9836287ee4a3e69, type: 3}
   backsprite: {fileID: 21300000, guid: 0bb7aa6de8950ea4bb5047076cd3827c, type: 3}
   type1: 2
@@ -24,3 +24,10 @@ MonoBehaviour:
   spAttack: 60
   spDefense: 50
   speed: 65
+  learnableMoves:
+  - moveBase: {fileID: 11400000, guid: d17e70e86ab5b9e40a617b53053d2468, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: 83d757f929532b3409d843b0973c3117, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: 60953d2f2db9a554e8de58601f6cf1ca, type: 2}
+    level: 4

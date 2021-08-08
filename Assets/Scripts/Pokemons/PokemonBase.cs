@@ -29,6 +29,7 @@ public class PokemonBase : ScriptableObject
     [SerializeField] int spDefense;
     [SerializeField] int speed;
 
+    [SerializeField] List<LearnableMove> learnableMoves;
  
     //properties
 
@@ -90,6 +91,30 @@ public class PokemonBase : ScriptableObject
     public int Speed
     {
         get { return speed; }
+    }
+
+    public List<LearnableMove> LearnableMoves
+    {
+        get { return learnableMoves; }
+    }
+}
+
+[System.Serializable]
+
+//la ou on apprend les move
+public class LearnableMove
+{
+    [SerializeField] MoveBase moveBase;
+    [SerializeField] int level;
+
+    public MoveBase Base
+    {
+        get { return moveBase; }
+    }
+
+    public int Level
+    {
+        get { return level; }
     }
 }
 // ici les type des pokémons présent dans le jeu

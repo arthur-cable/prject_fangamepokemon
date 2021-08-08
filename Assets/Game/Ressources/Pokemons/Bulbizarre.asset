@@ -12,15 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2930ca53a932a9a4a8781c60a1a59f4d, type: 3}
   m_Name: Bulbizarre
   m_EditorClassIdentifier: 
-  name: 
-  description: 
+  name: Bulbizarre
+  description: 'le bulbe !
+
+'
   frontsprite: {fileID: 21300000, guid: 002528d8bff286c41b0e33dd721c2768, type: 3}
   backsprite: {fileID: 21300000, guid: b790724af81b0a541a399aeecf3d93cc, type: 3}
-  type1: 4
-  type2: 7
+  type1: 5
+  type2: 8
   maxHP: 45
   attack: 49
   defense: 49
   spAttack: 65
   spDefense: 65
   speed: 45
+  learnableMoves:
+  - moveBase: {fileID: 11400000, guid: a4696192c56aa734ba4a9316fbca73a5, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: 48fe4c5a781cc3241ac186361988d6e8, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: 83d757f929532b3409d843b0973c3117, type: 2}
+    level: 3
+  - moveBase: {fileID: 11400000, guid: 48b1062af10ab2b42bfae2ff83a4d952, type: 2}
+    level: 20
