@@ -20,6 +20,6 @@ public class BattleSystem : MonoBehaviour
         playerUnit.Setup();
         enemyUnit.Setup();
         playerHud.SetData(playerUnit.Pokemon);
-        enemyHud.SetData(playerUnit.Pokemon);
+        enemyHud.SetData(enemyUnit.Pokemon);
     }
 }
