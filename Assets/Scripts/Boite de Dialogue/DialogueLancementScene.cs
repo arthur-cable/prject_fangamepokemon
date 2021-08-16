@@ -20,6 +20,7 @@ public class DialogueLancementScene : MonoBehaviour
     private void Start()
     {
         PlayerPrefs.DeleteKey("PlayerName");//*******************************************************LIGNE DE TEST : A ENLEVER ABSOLUMENT APRES TEST *****************************
+        PlayerPrefs.SetInt("Test", 7);//*************************************************************LIGNE DE TEST : A ENLEVER ABSOLUMENT APRES TEST *****************************
 
         //Déclenche l'ouverture de la boite de dialogue et indique que la conversation est en cours.
         animator.SetBool("DialogueBoxIsOpen", true);

@@ -43,7 +43,7 @@ public class MainMenu : MonoBehaviour
     public void QuitGame() 
     {
         Debug.Log("Quit");
-        PlayerPrefs.DeleteKey("save"); //ATTENTION : CETTE LIGNE SERT DE TEST MAIS DEVRA ETRE SUPPRIMER UN JOUR
+        PlayerPrefs.DeleteKey("save"); //ATTENTION : CETTE LIGNE SERT DE TEST MAIS DEVRA ETRE SUPPRIMER UN JOUR**********************************************************
         Application.Quit(); 
     }
 }
