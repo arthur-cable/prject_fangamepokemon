@@ -533,10 +533,13 @@ MonoBehaviour:
   dialogue:
     name: Pr X (alias clone de Pr Chen)
     sentences:
-    - Helloooo !
+    - Bonjour et bienvenu !!!
     - Bienvenue dans le monde de Pokemon. Mon nom est X, je suis un professeur de
       pokemon. Mais avant tout parle-moi un peu de toi.
-    - 'Es-tu un homme ou une femme ? '
+    - "Je sais tu connais la chanson. Une nouvelle r\xE9gion, l'ensemble des pokemons
+      r\xE9unis en un seul endroit que r\xEAver de plus pour un dresseur de pokemon
+      ? Mais \xE0 ton tour de te pr\xE9senter. Pour commencer es-tu un homme ou une
+      femme ? "
   animator: {fileID: 810473178}
 --- !u!1 &1020744130
 GameObject:
@@ -805,7 +808,9 @@ MonoBehaviour:
   dialogue:
     name: Pr X (alias clone de Pr Chen)
     sentences:
-    - Tu es donc un homme.
+    - "Tu es donc un homme. A le sexe des brutes et des idiots. Moi aussi je suis
+      un homme ? En es tu s\xFBr ? As tu d\xE9j\xE0 v\xE9rifi\xE9 ?\nAh ah je rigole
+      (ou pas...)"
     - 'Et quel est ton nom ? '
 --- !u!1 &1278048023
 GameObject:

@@ -1,7 +1,55 @@
 fileFormatVersion: 2
 guid: e4d8afd33bf68e9499a72b319e4e510c
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 4737179193453967181
+    second: gentlewoman1_hgss_0
+  - first:
+      213: 1279626718998736661
+    second: gentlewoman1_hgss_1
+  - first:
+      213: -3194202152957369349
+    second: gentlewoman1_hgss_2
+  - first:
+      213: -783542859197426137
+    second: gentlewoman1_hgss_3
+  - first:
+      213: 2127378700066699586
+    second: gentlewoman1_hgss_4
+  - first:
+      213: -8413294080547549251
+    second: gentlewoman1_hgss_5
+  - first:
+      213: -7536647362388529331
+    second: gentlewoman1_hgss_6
+  - first:
+      213: 2619076326158033383
+    second: gentlewoman1_hgss_7
+  - first:
+      213: 5566910214552338310
+    second: gentlewoman1_hgss_8
+  - first:
+      213: 3638766536967866701
+    second: gentlewoman1_hgss_9
+  - first:
+      213: -4254648365940023812
+    second: gentlewoman1_hgss_10
+  - first:
+      213: -2645021513632773202
+    second: gentlewoman1_hgss_11
+  - first:
+      213: 2343365069397972768
+    second: gentlewoman1_hgss_12
+  - first:
+      213: -1916887994446638607
+    second: gentlewoman1_hgss_13
+  - first:
+      213: -9185989618354382257
+    second: gentlewoman1_hgss_14
+  - first:
+      213: 324211890671242089
+    second: gentlewoman1_hgss_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +89,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,9 +123,393 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: gentlewoman1_hgss_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 98
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d47f137b067ddb140800000000000000
+      internalID: 4737179193453967181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gentlewoman1_hgss_1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 97
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51fa40f98b522c110800000000000000
+      internalID: 1279626718998736661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gentlewoman1_hgss_2
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 98
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf32034c01aeba3d0800000000000000
+      internalID: -3194202152957369349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gentlewoman1_hgss_3
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 97
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7265e33cbeb4025f0800000000000000
+      internalID: -783542859197426137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gentlewoman1_hgss_4
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 66
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 249353808a7f58d10800000000000000
+      internalID: 2127378700066699586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gentlewoman1_hgss_5
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 66
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbf011afb99fd3b80800000000000000
+      internalID: -8413294080547549251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gentlewoman1_hgss_6
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 66
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4f627f9723786790800000000000000
+      internalID: -7536647362388529331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gentlewoman1_hgss_7
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 66
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e1e84cca04d85420800000000000000
+      internalID: 2619076326158033383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gentlewoman1_hgss_8
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 34
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68fb2ea6853a14d40800000000000000
+      internalID: 5566910214552338310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gentlewoman1_hgss_9
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 34
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d494c88e2ee7f7230800000000000000
+      internalID: 3638766536967866701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gentlewoman1_hgss_10
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 34
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfdd2ff6ad374f4c0800000000000000
+      internalID: -4254648365940023812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gentlewoman1_hgss_11
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 34
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eab07a082fefa4bd0800000000000000
+      internalID: -2645021513632773202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gentlewoman1_hgss_12
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 2
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 027568c6d1e458020800000000000000
+      internalID: 2343365069397972768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gentlewoman1_hgss_13
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 1
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f11cc07688d565e0800000000000000
+      internalID: -1916887994446638607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gentlewoman1_hgss_14
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 2
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4a9f8f8c1fc48080800000000000000
+      internalID: -9185989618354382257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gentlewoman1_hgss_15
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 1
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96bca6f2ff4df7400800000000000000
+      internalID: 324211890671242089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

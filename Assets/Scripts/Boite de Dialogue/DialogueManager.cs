@@ -44,11 +44,13 @@ public class DialogueManager : MonoBehaviour
             return; //Permet de sortir de la fonction
         }
         string sentence = sentences.Dequeue(); //on stocke la phrase la plus haut de la pile dans la variable sentence
-        sentence = CheckAbsenceDonneeSaved(sentence);
+        sentence = CheckAbsenceDonneeSaved(sentence); //permet si besoin de remplacer une partie de sentence par le contenu d'une donnée sauvegardée. 
         StopAllCoroutines(); //On arrête toutes les autres coroutines du script (donc si le joueur veut passer à la prochaine phrase il pourra même si tout le texte n'est pas encore affiché)
         StartCoroutine(WriteSentence(sentence)); //lance la coroutine qui permet l'affichage progressif de sentence
     }
 
+    // Méthode qui permet d'afficher le contenu de données sauvegardées (comme le nom du joueur) en marquant dans le dialogue sur unity PlayerPrefs.Get("key"). Par exemple, sur unity, si on écrit 
+    //dans le dialogue PlayerPrefs.Get("PlayerName") alors cette instruction sera remplacée par le nom du joueur. Cette fonction marche égalemment avec les entiers et les chiffres à virgule. 
     private String CheckAbsenceDonneeSaved(string sentence)
     {
         if (sentence.Contains("PlayerPrefs.Get")) {
@@ -104,8 +106,8 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text += letter; //on ajoute au contenu déjà affiché la lettre suivante
             yield return null; //permet de skipper une frame
 
-            /*Si on veut skipper plus de frame : 
-            yield return new WaitForSeconds(0.01f); */
+            //Si on veut skipper plus de frame : 
+            //yield return new WaitForSeconds(0.02f);
         }
     }
 

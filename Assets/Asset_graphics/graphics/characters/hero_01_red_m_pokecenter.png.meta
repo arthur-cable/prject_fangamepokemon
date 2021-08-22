@@ -1,7 +1,55 @@
 fileFormatVersion: 2
 guid: bf950ce4245f2c64b9853de98536e8d3
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 5513128936326295602
+    second: hero_01_red_m_pokecenter_0
+  - first:
+      213: -7180537280373838363
+    second: hero_01_red_m_pokecenter_1
+  - first:
+      213: -7617837463026738779
+    second: hero_01_red_m_pokecenter_2
+  - first:
+      213: 3705090292831518332
+    second: hero_01_red_m_pokecenter_3
+  - first:
+      213: -4215232955700723600
+    second: hero_01_red_m_pokecenter_4
+  - first:
+      213: 1628549327903251013
+    second: hero_01_red_m_pokecenter_5
+  - first:
+      213: 6636993733173982339
+    second: hero_01_red_m_pokecenter_6
+  - first:
+      213: 4349706931425225904
+    second: hero_01_red_m_pokecenter_7
+  - first:
+      213: 5081607217241264219
+    second: hero_01_red_m_pokecenter_8
+  - first:
+      213: 3498364484624796279
+    second: hero_01_red_m_pokecenter_9
+  - first:
+      213: -7245218982854475209
+    second: hero_01_red_m_pokecenter_10
+  - first:
+      213: 8623998550327383637
+    second: hero_01_red_m_pokecenter_11
+  - first:
+      213: -1894969307348092633
+    second: hero_01_red_m_pokecenter_12
+  - first:
+      213: -1884095850658187745
+    second: hero_01_red_m_pokecenter_13
+  - first:
+      213: 9014953524960920576
+    second: hero_01_red_m_pokecenter_14
+  - first:
+      213: -4584519376488155089
+    second: hero_01_red_m_pokecenter_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +89,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,9 +123,393 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: hero_01_red_m_pokecenter_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 99
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 230f7aace81928c40800000000000000
+      internalID: 5513128936326295602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_01_red_m_pokecenter_1
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 99
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ed2eda336b995c90800000000000000
+      internalID: -7180537280373838363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_01_red_m_pokecenter_2
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 99
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a9d0ab3031084690800000000000000
+      internalID: -7617837463026738779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_01_red_m_pokecenter_3
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 99
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7e78fcadff1b6330800000000000000
+      internalID: 3705090292831518332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_01_red_m_pokecenter_4
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 67
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07040f5c5fb7085c0800000000000000
+      internalID: -4215232955700723600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_01_red_m_pokecenter_5
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 67
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54adfdc3cf4c99610800000000000000
+      internalID: 1628549327903251013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_01_red_m_pokecenter_6
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 67
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3843452d2a65b1c50800000000000000
+      internalID: 6636993733173982339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_01_red_m_pokecenter_7
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 67
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bca7ac88634d5c30800000000000000
+      internalID: 4349706931425225904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_01_red_m_pokecenter_8
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 35
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b501abf27de758640800000000000000
+      internalID: 5081607217241264219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_01_red_m_pokecenter_9
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 35
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77a47e0b6ffac8030800000000000000
+      internalID: 3498364484624796279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_01_red_m_pokecenter_10
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 35
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 732ca0fc8bfc37b90800000000000000
+      internalID: -7245218982854475209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_01_red_m_pokecenter_11
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 35
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5565fb75df89ea770800000000000000
+      internalID: 8623998550327383637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_01_red_m_pokecenter_12
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 3
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 729bf377477b3b5e0800000000000000
+      internalID: -1894969307348092633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_01_red_m_pokecenter_13
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 3
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f163bb26ec85ad5e0800000000000000
+      internalID: -1884095850658187745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_01_red_m_pokecenter_14
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 3
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00483f9b77c8b1d70800000000000000
+      internalID: 9014953524960920576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_01_red_m_pokecenter_15
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 3
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f28378abae38060c0800000000000000
+      internalID: -4584519376488155089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
