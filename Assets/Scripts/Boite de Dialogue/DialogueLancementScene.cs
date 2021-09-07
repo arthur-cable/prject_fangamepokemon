@@ -20,8 +20,6 @@ public class DialogueLancementScene : MonoBehaviour
     //Puisqu'on lance la conversation dès le lancement de la scene, on utilise la méthode Start pour commencer le dialogue
     private void Start()
     {
-        PlayerPrefs.DeleteKey("PlayerName");//*******************************************************LIGNE DE TEST : A ENLEVER ABSOLUMENT APRES TEST *****************************
-        PlayerPrefs.SetInt("Test", 7);//*************************************************************LIGNE DE TEST : A ENLEVER ABSOLUMENT APRES TEST *****************************
         vitesseTexte = PlayerPrefs.GetFloat("vitesseTexte"); 
 
         //Déclenche l'ouverture de la boite de dialogue et indique que la conversation est en cours.
@@ -64,8 +62,6 @@ public class DialogueLancementScene : MonoBehaviour
         foreach (char letter in sentence.ToCharArray()) //On prend chaque caractere un par un de sentence
         {
             dialogueText.text += letter; //on ajoute au contenu déjà affiché la lettre suivante
-
-            /*Si on veut skipper plus de frame : */
             yield return new WaitForSeconds(vitesseTexte); 
         }
     }

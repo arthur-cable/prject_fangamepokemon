@@ -12,11 +12,14 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;  //Gère l'animation de la boite de dialogue quand elle apparait et disparait
     private Queue<string> sentences; //donnée intermédaire qui stockera l'ensemble des phrases du dialogue
     private bool isTalking; //Pour savoir si la conversation est en cours
+    private float vitesseTexte;
 
 
     private void Start()
     {
-       sentences = new Queue<string>();  //initialisation de la queue
+        sentences = new Queue<string>();  //initialisation de la queue
+        vitesseTexte = PlayerPrefs.GetFloat("vitesseTexte");
+
     }
 
     //permet de commencer la conversation
@@ -104,10 +107,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in sentence.ToCharArray()) //On prend chaque caractere un par un de sentence
         {
             dialogueText.text += letter; //on ajoute au contenu déjà affiché la lettre suivante
-            yield return null; //permet de skipper une frame
-
-            //Si on veut skipper plus de frame : 
-            //yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(vitesseTexte);
         }
     }
 
