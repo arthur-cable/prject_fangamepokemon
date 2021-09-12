@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         playerController.OnEncountered += StartBattle;
+        battleSystem.OnBattleOver += EndBattle;
         DialogManager.Instance.OnShowDialog += () => state = GameState.Dialog;
         DialogManager.Instance.OnCloseDialog += () =>
         {
@@ -28,7 +29,16 @@ public class GameController : MonoBehaviour
     {
         state = GameState.Battle;
         battleSystem.gameObject.SetActive(true);
-        worldCamera.gameObject.SetActive(false); 
+        worldCamera.gameObject.SetActive(false);
+
+        battleSystem.StartBattle();
+    }
+
+    void EndBattle(bool won)
+    {
+        state = GameState.FreeRoam;
+        battleSystem.gameObject.SetActive(false);
+        worldCamera.gameObject.SetActive(true); 
     }
 
     // Update is called once per frame
@@ -39,10 +49,10 @@ public class GameController : MonoBehaviour
             playerController.HandleUpdate();
         }
 
-        /*else if (state == GameState.Battle)
+        else if (state == GameState.Battle)
         {
-            BattleSystem.HandleUpdate(); 
-        }*/
+            battleSystem.HandleUpdate();
+        }
 
         else if (state == GameState.Dialog)
         {

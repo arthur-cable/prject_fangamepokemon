@@ -10,7 +10,6 @@ public class DialogManager : MonoBehaviour
     [SerializeField] GameObject dialogBox;
     [SerializeField] Text dialogName;
     [SerializeField] Text dialogText;
-    [SerializeField] Button btnContinuer;
     private float vitesseTexte;
 
     public event Action OnShowDialog;

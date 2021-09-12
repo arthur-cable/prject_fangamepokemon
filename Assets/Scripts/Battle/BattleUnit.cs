@@ -22,5 +22,6 @@ public class BattleUnit : MonoBehaviour
             GetComponent<Image>().sprite = Pokemon.Base.BackSprite;
         else
             GetComponent<Image>().sprite = Pokemon.Base.FrontSprite;
+        //image.color = originalColor; // a décommenter quand vidéo animation fight terminé !!!!
     }
 }

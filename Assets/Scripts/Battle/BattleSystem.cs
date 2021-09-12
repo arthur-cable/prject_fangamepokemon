@@ -15,16 +15,17 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] BattleHUD playerHud;
     [SerializeField] BattleHUD enemyHud;
     [SerializeField] BattleDialogBox dialogBox;
-
+    
+    public event Action<bool> OnBattleOver;
+    
     BattleState state;
     int currentAction;
     int currentMove;
 
 
-    public event Action<bool> OnBattleOver;
 
     // Start is called before the first frame update
-    public void Start()
+    public void StartBattle()
     {
         StartCoroutine(SetupBattle());
     }
@@ -78,7 +79,10 @@ public class BattleSystem : MonoBehaviour
         if (isFainted)
         {
             yield return dialogBox.TypeDialog($"{enemyUnit.Pokemon.Base.Name} est mis KO !");
+            //enemyUnit.PlayFaintAnimation(); a décommenter quand vidéo animation fight terminé 
 
+            yield return new WaitForSeconds(2f);
+            OnBattleOver(true);
         }
         else
         {
@@ -103,23 +107,15 @@ public class BattleSystem : MonoBehaviour
         if (isFainted)
         {
             yield return dialogBox.TypeDialog($"{playerUnit.Pokemon.Base.Name} est mis KO !");
+            //playerUnit.PlayFaintAnimation(); a décommenter quand vidéo animation fight terminé 
+            
+            yield return new WaitForSeconds(2f);
+            OnBattleOver(false);
 
         }
         else
         {
             PlayerAction();
-        }
-    }
-
-    private void Update()
-    {
-        if (state == BattleState.PlayerAction)
-        {
-            HandleActionSelection();
-        }
-        else if (state == BattleState.PlayerMove)
-        {
-            HandleMoveSelection();
         }
     }
 
@@ -196,6 +192,13 @@ public class BattleSystem : MonoBehaviour
     => modif faite dans la vidéo 12 à 3min28 */
     public void HandleUpdate()
     {
-
+        if (state == BattleState.PlayerAction)
+        {
+            HandleActionSelection();
+        }
+        else if (state == BattleState.PlayerMove)
+        {
+            HandleMoveSelection();
+        }
     }
 }
