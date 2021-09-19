@@ -21,7 +21,9 @@ public class DialogManager : MonoBehaviour
     private int currentLine = 0;
 
     private bool continuer = false;
-    private bool canTalk = true;
+    private bool canTalk = true; 
+
+    public bool IsShowing { get; private set; }
 
     public static DialogManager Instance { get; private set; }
     private void Awake()
@@ -41,6 +43,7 @@ public class DialogManager : MonoBehaviour
             yield return new WaitForEndOfFrame();
             OnShowDialog?.Invoke(); //Le ? correspond à l'opérateur conditionnel nul => si OnShowDialog != null, la méthode invoke est appelée dans le cas inverse, Invoke n'est pas appelée
 
+            IsShowing = true;
             this.dialog = dialog;
             animator.SetBool("DialogBoxIsOpen", true); //Déclenche l'ouverture de la boite de dialogue
             dialogName.text = dialog.Name;
@@ -68,6 +71,7 @@ public class DialogManager : MonoBehaviour
                 StopAllCoroutines();    //permet d arrêter le dialogue sans attendre la fin de l'écriture
                 StartCoroutine(canTalkAgain());
                 animator.SetBool("DialogBoxIsOpen", false); //Déclenche la fermeture de la boite de dialogue
+                IsShowing = false; 
 
                 OnCloseDialog?.Invoke(); //invoque l'event OnCloseDialogue
             }

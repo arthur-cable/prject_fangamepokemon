@@ -3,11 +3,67 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NPCControler : MonoBehaviour, Interactable 
-{ 
-    [SerializeField] Dialog dialog; 
+{
+    public enum NPCState { Idle, Walking }
+
+
+    [SerializeField] Dialog dialog;
+    [SerializeField] List<Vector2> movementPattern;
+    [SerializeField] float timeBetweenPattern;
+
+    Character character;
+    float idleTimer;
+    int currentPattern = 0;
+    NPCState state; 
+
+    /*[SerializeField] List<Sprite> sprites;
+
+SpriteAnimator spriteAnimator;*/
+
+
+    private void Awake()
+    {
+        character = GetComponent<Character>();
+
+    }
+
+
+    /*private void Start()
+    {
+        spriteAnimator = new SpriteAnimator(sprites, GetComponent< SpriteRenderer >());
+        spriteAnimator.Start(); 
+    }
+
+    private void Update()
+    {
+        spriteAnimator.HandleUpdate();
+    }*/
 
     public void Interact()
     {
-        StartCoroutine(DialogManager.Instance.ShowDialog(dialog)); 
+        if (state==NPCState.Idle) StartCoroutine(DialogManager.Instance.ShowDialog(dialog)); //si le pnj n'est pas a l arret, on ne peut pas parler => pas sur que condition intéressante
+    }
+
+    private void Update()
+    {
+        if (DialogManager.Instance.IsShowing) return;
+        if (state == NPCState.Idle)
+        {
+            idleTimer += Time.deltaTime; 
+            if (idleTimer > timeBetweenPattern)
+            {
+                idleTimer = 0f; 
+                if (movementPattern.Count > 0) StartCoroutine(Walk()); 
+            }
+        }
+        character.HandleUpdate();
+    }
+
+    IEnumerator Walk()
+    {
+        state = NPCState.Walking;
+        yield return character.Move(movementPattern[currentPattern]);
+        currentPattern = (currentPattern + 1) % movementPattern.Count;
+        state = NPCState.Idle;
     }
 }
