@@ -18,12 +18,14 @@ public class DialogManager : MonoBehaviour
     public Animator animator;  //Gère l'animation de la boite de dialogue quand elle apparait et disparait
 
     private Dialog dialog;
-    private int currentLine = 0;
+    Action onDialogFinished;
+    
+    private int currentLine = 0; //ligne en cours
 
-    private bool continuer = false;
-    private bool canTalk = true; 
+    private bool continuer = false; //mémoire qui passe à true quand on appuie sur le bouton continuer 
+    private bool canTalk = true; //booléan pour savoir si le perso peut engager une nouvelle conversation
 
-    public bool IsShowing { get; private set; }
+    public bool IsShowing { get; private set; } //indique si la boite de dialogue est ouverte
 
     public static DialogManager Instance { get; private set; }
     private void Awake()
@@ -33,56 +35,59 @@ public class DialogManager : MonoBehaviour
 
     private void Start()
     {
-        vitesseTexte = PlayerPrefs.GetFloat("vitesseTexte");
+        vitesseTexte = PlayerPrefs.GetFloat("vitesseTexte"); //on initialise la vitesse du texte par rapport à celle enregistrée par le joueur
     }
 
-    public IEnumerator ShowDialog(Dialog dialog)
+    //Pour ouvrir la boite de dialogue et afficher la premiere ligne de dialogue
+    public IEnumerator ShowDialog(Dialog dialog, Action onFinished=null)
     {
-        if (canTalk)
+        if (canTalk) 
         {
             yield return new WaitForEndOfFrame();
-            OnShowDialog?.Invoke(); //Le ? correspond à l'opérateur conditionnel nul => si OnShowDialog != null, la méthode invoke est appelée dans le cas inverse, Invoke n'est pas appelée
+            OnShowDialog?.Invoke(); //Le ? correspond à l'opérateur conditionnel nul => si OnShowDialog != null, la méthode associée à onShowDialog est appelee
 
-            IsShowing = true;
+            IsShowing = true;  
             this.dialog = dialog;
+            onDialogFinished = onFinished;
+
             animator.SetBool("DialogBoxIsOpen", true); //Déclenche l'ouverture de la boite de dialogue
-            dialogName.text = dialog.Name;
+            dialogName.text = dialog.Name; //affiche le nom du perso qui parle
             string line = CheckAbsenceDonneeSaved(dialog.Lines[currentLine]); //permet si besoin de remplacer une partie de sentence par le contenu d'une donnée sauvegardée. 
-            StartCoroutine(TypeDialog(line));
+            StartCoroutine(TypeDialog(line)); //permet d'écrire au fur et à mesure la chaine de caractères attribuée à line
         }
     }
 
-    public void HandleUpdate()
+    //Gère les différents cas quand la méthode Update de GameControler l'appelle
+    public void HandleUpdate() 
     {
-        if (Input.GetKeyDown(KeyCode.Space) || continuer || Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.Space) || continuer || Input.GetKey(KeyCode.LeftShift)) //si on appuie sur espace ou le bouton continuer ou sur shift de gauche
         {
-            continuer = false;
+            continuer = false; 
             ++currentLine;
             if (currentLine < dialog.Lines.Count)
             {
-                string line = CheckAbsenceDonneeSaved(dialog.Lines[currentLine]); //permet si besoin de remplacer une partie de sentence par le contenu d'une donnée sauvegardée. 
+                string line = CheckAbsenceDonneeSaved(dialog.Lines[currentLine]); //permet si besoin de remplacer une partie de sentence par le contenu d'une donnée sauvegardée (pour le moment via PlayerPrefs)
                 StopAllCoroutines();    //permet de passer à la prochaine ligne sans attendre la fin de l'écriture
                 StartCoroutine(TypeDialog(line)); //permet de passer à la prochaine ligne
             }
             else //Fin du dialogue
             {
-                canTalk = false;
-                currentLine = 0;
+                //empeche temporairement la possibilité de parler le temps que la boite de dialogue se ferme complètement
+                canTalk = false; 
                 StopAllCoroutines();    //permet d arrêter le dialogue sans attendre la fin de l'écriture
                 StartCoroutine(canTalkAgain());
+                
+                //RAZ et fermeture de la boite de dialogue
+                currentLine = 0;
                 animator.SetBool("DialogBoxIsOpen", false); //Déclenche la fermeture de la boite de dialogue
-                IsShowing = false; 
-
+                IsShowing = false;
+                onDialogFinished?.Invoke(); //Le ? correspond à l'opérateur conditionnel nul => si OnDialogFinished != null, la méthode associée à onDialogFinished est appelée (ici la méthode est défini dans la méthode update de NPC controler)
                 OnCloseDialog?.Invoke(); //invoque l'event OnCloseDialogue
             }
         }
     }
 
-    public void setContinuer()
-    {
-        continuer = true;
-    }
-
+    //Temmpo en attendant la fermeture de la boite de dialogue
     private IEnumerator canTalkAgain()
     {
         yield return new WaitForSeconds(0.60f);
@@ -138,7 +143,7 @@ public class DialogManager : MonoBehaviour
     }
 
 
-    //Fonction qui permettra d'afficher progressivement le texte de sentence
+    //Fonction qui permettra d'afficher progressivement le texte de line
     private IEnumerator TypeDialog(string line)
     {
         dialogText.text = ""; //on vide la zone permettant l'affichage du dialogue sur unity 
@@ -147,6 +152,12 @@ public class DialogManager : MonoBehaviour
             dialogText.text += letter; //on ajoute au contenu déjà affiché la lettre suivante
             yield return new WaitForSeconds(vitesseTexte);
         }
+    }
+
+    //set continuer a true quand on appuie sur le bouton continuer
+    public void setContinuer()
+    {
+        continuer = true;
     }
 
 }

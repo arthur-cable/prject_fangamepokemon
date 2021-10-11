@@ -1289,7 +1289,7 @@ GameObject:
   - component: {fileID: 226610990}
   - component: {fileID: 226610989}
   m_Layer: 8
-  m_Name: PNJ
+  m_Name: PNJ_MamieSportive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2097,7 +2097,7 @@ GameObject:
   - component: {fileID: 596103380}
   - component: {fileID: 596103379}
   m_Layer: 8
-  m_Name: PNJ
+  m_Name: PNJ_voisineRandom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2147,7 +2147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d9e7306fdab45d4386e8451d5785c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
+  moveSpeed: 5
 --- !u!114 &596103381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2169,8 +2169,12 @@ MonoBehaviour:
       t'\xEAtre favorable."
     - "Pour information, le chiffre pr\xE9f\xE9r\xE9 de Pr. X est PlayerPrefs.GetInt(\"Test\")
       et le volume de ton son est configur\xE9 \xE0 PlayerPrefs.GetFloat(\"musicVolume\")."
-  movementPattern: []
-  timeBetweenPattern: 0
+  movementPattern:
+  - {x: -1, y: 0}
+  - {x: 1, y: 0}
+  - {x: 1, y: 0}
+  - {x: -1, y: 0}
+  timeBetweenPattern: 3
 --- !u!50 &596103382
 Rigidbody2D:
   serializedVersion: 4

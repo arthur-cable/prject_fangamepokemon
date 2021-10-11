@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NPCControler : MonoBehaviour, Interactable 
 {
-    public enum NPCState { Idle, Walking }
+    public enum NPCState { Idle, Walking, Dialog}
 
 
     [SerializeField] Dialog dialog;
@@ -41,12 +41,18 @@ SpriteAnimator spriteAnimator;*/
 
     public void Interact()
     {
-        if (state==NPCState.Idle) StartCoroutine(DialogManager.Instance.ShowDialog(dialog)); //si le pnj n'est pas a l arret, on ne peut pas parler => pas sur que condition intéressante
+        if (state == NPCState.Idle) //si le pnj n'est pas a l arret, on ne peut pas parler => pas sur que condition intéressante 
+        {
+            state = NPCState.Dialog;
+            StartCoroutine(DialogManager.Instance.ShowDialog(dialog, () => {
+                idleTimer = 0f;
+                state = NPCState.Idle; 
+            })); 
+        }
     }
 
     private void Update()
     {
-        if (DialogManager.Instance.IsShowing) return;
         if (state == NPCState.Idle)
         {
             idleTimer += Time.deltaTime; 

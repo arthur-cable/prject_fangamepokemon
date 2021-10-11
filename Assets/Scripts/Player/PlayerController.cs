@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public event Action OnEncountered; 
+    public event Action OnEncountered;  //Evenement quand on rencontre un poke sauvage
 
     private Vector2 input;
 
-    private Character character;
+    private Character character; 
 
     private void Awake()
     {
