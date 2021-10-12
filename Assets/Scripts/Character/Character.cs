@@ -23,7 +23,8 @@ public class Character : MonoBehaviour
         targetPos.x += moveVec.x;
         targetPos.y += moveVec.y;
 
-        if (!IsWalkable(targetPos)) yield break; //si le npc ne peut pas marcher, on sort de la coroutine
+        if (!IsPathClear(targetPos)) yield break; //si le npc ne peut pas marcher, on sort de la coroutine
+        
         IsMoving = true; 
 
         while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon) 
@@ -45,6 +46,18 @@ public class Character : MonoBehaviour
         animator.IsMoving = IsMoving;
     }
 
+    private bool IsPathClear(Vector3 targetPos)
+    {
+        var diff = targetPos - transform.position;
+        var dir = diff.normalized;
+
+        if (Physics2D.BoxCast(transform.position + dir, new Vector2(0.2f, 0.2f), 0f, dir, diff.magnitude - 1, GameLayer.Instance.SolidLayer | GameLayer.Instance.InteractableLayer | GameLayer.Instance.PlayerLayer))
+        {
+            return false;
+        }
+
+        return true;
+    }
 
     //Permet de savoir si la position où doit aller le character est une position où il a le droit d'aller 
     private bool IsWalkable(Vector3 targetPos)

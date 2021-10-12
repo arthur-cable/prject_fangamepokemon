@@ -68,8 +68,14 @@ SpriteAnimator spriteAnimator;*/
     IEnumerator Walk()
     {
         state = NPCState.Walking;
+
+        var oldPosition = transform.position; 
+        
         yield return character.Move(movementPattern[currentPattern]);
-        currentPattern = (currentPattern + 1) % movementPattern.Count;
+
+        if (transform.position != oldPosition) //si le character s'est déplacé, on passe au pattern suivant
+            currentPattern = (currentPattern + 1) % movementPattern.Count;
+        
         state = NPCState.Idle;
     }
 }
