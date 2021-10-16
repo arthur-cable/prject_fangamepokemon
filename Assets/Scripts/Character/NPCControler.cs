@@ -39,11 +39,12 @@ SpriteAnimator spriteAnimator;*/
         spriteAnimator.HandleUpdate();
     }*/
 
-    public void Interact()
+    public void Interact(Transform initiator)
     {
         if (state == NPCState.Idle) //si le pnj n'est pas a l arret, on ne peut pas parler => pas sur que condition intéressante 
         {
             state = NPCState.Dialog;
+            character.LookTowards(initiator.position);
             StartCoroutine(DialogManager.Instance.ShowDialog(dialog, () => {
                 idleTimer = 0f;
                 state = NPCState.Idle; 

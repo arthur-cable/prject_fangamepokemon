@@ -70,6 +70,19 @@ public class Character : MonoBehaviour
         return true;
     }
 
+    public void LookTowards(Vector3 targetPos)
+    {
+        var xdiff = Mathf.Floor(targetPos.x) - Mathf.Floor(transform.position.x);
+        var ydiff = Mathf.Floor(targetPos.y) - Mathf.Floor(transform.position.y);
+
+        if (xdiff==0 || ydiff == 0)
+        {
+            animator.MoveX = Mathf.Clamp(xdiff, -1f, 1f); //Bloque la valeur de xdiff entre -1 et 1
+            animator.MoveY = Mathf.Clamp(ydiff, -1f, 1f); //Bloque la valeur de moveVec.y entre -1 et 1
+        }
+
+    }
+
     public CharacterAnimator Animator
     {
         get => animator;
